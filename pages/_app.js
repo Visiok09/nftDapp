@@ -1,3 +1,5 @@
+import "../styles/globals.css";
+
 //internal import 
 
 import {NavBar} from "../components/componentsindex";
