@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-//import icons
+//----IMPORT ICON
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 
-//internal import
+//INTERNAL IMPORT
 import Style from "./NavBar.module.css";
 import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
 import { Button } from "../componentsindex";
 import images from "../../img";
+
 const NavBar = () => {
-  //--useState components
+  //----USESTATE COMPONNTS
   const [discover, setDiscover] = useState(false);
   const [help, setHelp] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -38,6 +39,7 @@ const NavBar = () => {
       setProfile(false);
     }
   };
+
   const openNotification = () => {
     if (!notification) {
       setNotification(true);
@@ -49,23 +51,24 @@ const NavBar = () => {
     }
   };
 
-  const openProfile = () =>{
-    if(!profile){
+  const openProfile = () => {
+    if (!profile) {
       setProfile(true);
-      setNotification(false);
-      setDiscover(false);
       setHelp(false);
-    }else{
+      setDiscover(false);
+      setNotification(false);
+    } else {
       setProfile(false);
     }
   };
-  const openSideBar = () =>{
-    if(!openSideMenu){
+
+  const openSideBar = () => {
+    if (!openSideMenu) {
       setOpenSideMenu(true);
-    }else{
+    } else {
       setOpenSideMenu(false);
     }
-  }
+  };
 
   return (
     <div className={Style.navbar}>
@@ -74,24 +77,23 @@ const NavBar = () => {
           <div className={Style.logo}>
             <Image
               src={images.logo}
-              alt="Nft Market Place"
+              alt="NFT MARKET PLACE"
               width={100}
               height={100}
             />
           </div>
           <div className={Style.navbar_container_left_box_input}>
-            <input type="text" placeholder="Search Nft" />
-            <BsSearch onClick={() => {}} className={Style.search_icon} />
+            <div className={Style.navbar_container_left_box_input_box}>
+              <input type="text" placeholder="Search NFT" />
+              <BsSearch onClick={() => {}} className={Style.search_icon} />
+            </div>
           </div>
         </div>
-        {/* end of left section */}
 
+        {/* //END OF LEFT SECTION */}
         <div className={Style.navbar_container_right}>
-
-           {/* Discover menu */}
           <div className={Style.navbar_container_right_discover}>
-
-           
+            {/* DISCOVER MENU */}
             <p onClick={(e) => openMenu(e)}>Discover</p>
             {discover && (
               <div className={Style.navbar_container_right_discover_box}>
@@ -100,7 +102,7 @@ const NavBar = () => {
             )}
           </div>
 
-          {/* Help center menu */}
+          {/* HELP CENTER MENU */}
           <div className={Style.navbar_container_right_help}>
             <p onClick={(e) => openMenu(e)}>Help Center</p>
             {help && (
@@ -110,7 +112,7 @@ const NavBar = () => {
             )}
           </div>
 
-          {/* Notification  */}
+          {/* NOTIFICATION */}
           <div className={Style.navbar_container_right_notify}>
             <MdNotifications
               className={Style.notify}
@@ -119,12 +121,13 @@ const NavBar = () => {
             {notification && <Notification />}
           </div>
 
-          {/* Create button section */}
+          {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnText="Create" />
+            <Button btnName="Create" handleClick={() => {}} />
           </div>
 
-          {/* User profile */}
+          {/* USER PROFILE */}
+
           <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
               <Image
@@ -135,27 +138,28 @@ const NavBar = () => {
                 onClick={() => openProfile()}
                 className={Style.navbar_container_right_profile}
               />
-              {profile && <Profile/>}
+
+              {profile && <Profile />}
             </div>
           </div>
 
-          {/* Menu button */}
+          {/* MENU BUTTON */}
+
           <div className={Style.navbar_container_right_menuBtn}>
-            <CgMenuRight 
+            <CgMenuRight
               className={Style.menuIcon}
-              onClick={()=> openSideBar()}
+              onClick={() => openSideBar()}
             />
           </div>
         </div>
       </div>
-      {/* SidBar component */}
-      {
-        openSideMenu && (
-          <div className={Style.SideBar}>
-            <SideBar setOpenSideMenu={setOpenSideMenu}/>
-          </div>
-        )
-      }
+
+      {/* SIDBAR CPMPONE/NT */}
+      {openSideMenu && (
+        <div className={Style.sideBar}>
+          <SideBar setOpenSideMenu={setOpenSideMenu} />
+        </div>
+      )}
     </div>
   );
 };
