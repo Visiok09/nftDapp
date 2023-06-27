@@ -1,7 +1,19 @@
 import React from "react";
+
+//internal import
+import Style from "../styles/index.module.css";
+import {
+    HeroSection,
+    Service,
+    BigNFTSlider
+} from "../components/componentsindex"
 const Home = () => {
     return (
-        <div></div>
+        <div className={Style.homePage}>
+            <HeroSection/>
+            <Service/>
+            <BigNFTSlider/>
+        </div>
     )
 }
 
