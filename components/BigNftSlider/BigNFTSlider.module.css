@@ -164,7 +164,7 @@
   border-radius: 5rem;
 }
 
-@media screen and (max-width: 65em) {
+@media screen and (min-device-width: 375px) and (max-device-width: 480px) {
   .bigNFTSlider_box {
     width: 90%;
     padding-top: 18rem;
@@ -177,6 +177,7 @@
     padding: 1.5rem;
   }
   .bigNFTSlider_box_right {
+    width: 80%;
     margin-top: -70rem;
   }
 
@@ -209,6 +210,61 @@
     width: 300px;
     height: 300px;
   }
+  .bigNFTSlider_box_right_box_like {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    top: 0.8rem;
+  }
+}
+@media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+  .bigNFTSlider_box {
+    width: 90%;
+    padding-top: 18rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .bigNFTSlider_box_left {
+    height: 70vh;
+    padding: 1.5rem;
+  }
+  .bigNFTSlider_box_right {
+    width: 80%;
+    margin-top: -70rem;
+  }
+
+  .bigNFTSlider_box_left_creator {
+    gap: 1rem;
+    grid-template-columns: 1.8fr 1fr;
+  }
+
+  .bigNFTSlider_box_left_creator_profile_info {
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  .bigNFTSlider_box_left_creator_collection_icon {
+    font-size: 1.5rem;
+  }
+
+  .bigNFTSlider_box_left_creator_collection_info {
+    font-size: 0.8rem;
+  }
+
+  .bigNFTSlider_box_left_bidding_box_timer {
+    gap: 2rem;
+  }
+
+  .bigNFTSlider_box_left_bidding_box_timer_item p {
+    font-size: 1rem;
+  }
+  /* .bigNFTSlider_box_right_box img {
+    width: 300px;
+    height: 300px;
+  } */
   .bigNFTSlider_box_right_box_like {
     display: flex;
     position: absolute;
