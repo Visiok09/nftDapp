@@ -6,19 +6,19 @@ import { TbDownloadOff, TbDownload } from "react-icons/tb";
 import Link from "next/link";
 
 //internal import
-import Style from './Profile.module.css';
-import images from '../../../img';
+import Style from "./Profile.module.css";
+import images from "../../../img";
 
 const Profile = () => {
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
-        <Image 
-        src={images.user1}
-        alt="user profile"
-        width={50}
-        height={50}
-        className={Style.profile_account_img}
+        <Image
+          src={images.user1}
+          alt="user profile"
+          width={50}
+          height={50}
+          className={Style.profile_account_img}
         />
         <div className={Style.profile_account_info}>
           <p>User1</p>
@@ -31,19 +31,19 @@ const Profile = () => {
           <div className={Style.profile_menu_one_item}>
             <FaUserAlt />
             <p>
-              <Link href={{pathname: "/myprofile"}}>My Profile</Link>
+              <Link href={{ pathname: "/author-profile" }}>My Profile</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <FaRegImage />
             <p>
-              <Link href={{pathname: "/my-items"}}>My Items</Link>
+              <Link href={{ pathname: "/my-items" }}>My Items</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <FaUserEdit />
             <p>
-              <Link href={{pathname: "/edit-profile"}}>Edit Profile</Link>
+              <Link href={{ pathname: "/edit-profile" }}>Edit Profile</Link>
             </p>
           </div>
         </div>
@@ -52,19 +52,19 @@ const Profile = () => {
           <div className={Style.profile_menu_one_item}>
             <MdHelpCenter />
             <p>
-              <Link href={{pathname : "/help"}}>Help</Link>
+              <Link href={{ pathname: "/help" }}>Help</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <TbDownload />
             <p>
-              <Link href={{pathname: "/disconnect"}}>Disconnect</Link>
+              <Link href={{ pathname: "/disconnect" }}>Disconnect</Link>
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Profile;
