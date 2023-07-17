@@ -5,7 +5,8 @@ import Link from "next/link";
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
-
+import { DiJqueryLogo } from "react-icons/di";
+import { useRouter } from "next/router";
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
 import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
@@ -39,6 +40,8 @@ const NavBar = () => {
   //     setProfile(false);
   //   }
   // };
+  const router = useRouter();
+
   const openDiscover = () => {
     if (!discover) {
       setNotification(false);
@@ -95,12 +98,7 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <Image
-              src={images.logo}
-              alt="NFT MARKET PLACE"
-              width={100}
-              height={100}
-            />
+            <DiJqueryLogo onClick={() => router.push("/")} />
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
@@ -114,12 +112,13 @@ const NavBar = () => {
         <div className={Style.navbar_container_right}>
           <div className={Style.navbar_container_right_discover}>
             {/* DISCOVER MENU */}
-            <p onClick={() => openDiscover()}>Discover</p>
-            {discover && (
+            <Link href={{ pathname: "/explore" }}>expl</Link>
+            {/* <p onClick={() => openDiscover()}>Discover</p> */}
+            {/* {discover && (
               <div className={Style.navbar_container_right_discover_box}>
                 <Discover />
               </div>
-            )}
+            )} */}
           </div>
 
           {/* HELP CENTER MENU */}
