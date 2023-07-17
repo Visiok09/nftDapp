@@ -123,6 +123,11 @@
   display: none;
 }
 
+.logo {
+  color: var(--icons-color);
+  font-size: 4rem;
+}
+
 @media screen and (min-device-width: 320px) and (max-device-width: 768px) {
   .navbar_container {
     grid-template-columns: 1fr 1fr;
