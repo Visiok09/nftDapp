@@ -9,6 +9,9 @@ import Category from './Category/Category'
 import Filter from './Filter/Filter'
 import NFTCard from './NFTCard/NFTCard'
 import Collection from './Collection/Collection'
+import Brand from './Brand/Brand'
+import Slider from './Slider/Slider'
+import LikeProfile from "./LikeProfile/LikeProfile";
 
 export {
     Button,
@@ -21,5 +24,8 @@ export {
     Category, 
     Filter,
     NFTCard,
-    Collection
+    Collection,
+    Brand,
+    Slider,
+    LikeProfile
 }
